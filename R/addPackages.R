@@ -171,6 +171,7 @@ addOldPackage <- function(pkgs = NULL, path = NULL, vers = NULL,
             "Use pkgs and vers to identify which dependecies and their versions to download.")
   }
   vers <- as.character(vers)
+  repos <- gsub("/$", "", repos)
   oldPkgs <- file.path(repos, repoPrefix(type, R.version), "Archive",
                        pkgs, sprintf("%s_%s%s", pkgs, vers, pkgFileExt(type)))
 
